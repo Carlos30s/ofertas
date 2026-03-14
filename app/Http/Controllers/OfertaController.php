@@ -21,7 +21,7 @@ class OfertaController extends Controller
      */
     public function create()
     {
-        //
+        return view('ofertas.create');
     }
 
     /**
@@ -29,7 +29,8 @@ class OfertaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Oferta::create($request->all());
+        return redirect('/ofertas');
     }
 
     /**
@@ -37,7 +38,7 @@ class OfertaController extends Controller
      */
     public function show(Oferta $oferta)
     {
-        //
+        return view('ofertas.show', compact('oferta'));
     }
 
     /**
